@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta
     name="description"
-    content="Nepali Dai ko Momo - fresh, homemade Nepali momo, biryani and fried rice in the UK. Veg & non-veg options."
+    content="Nepali Dai ko Momo by Prabin Mahato – authentic veg & non-veg Nepali momo, jhol momo, fried rice and biryani in the UK."
   />
   <style>
     :root {
@@ -48,20 +48,26 @@
       text-decoration: none;
     }
 
-    .page {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 16px clamp(16px, 4vw, 32px) 40px;
+    main {
+      padding-bottom: 40px;
     }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 12px clamp(14px, 4vw, 28px);
+    }
+
+    /* HEADER / NAV */
 
     header {
       position: sticky;
       top: 0;
-      z-index: 10;
+      z-index: 20;
       backdrop-filter: blur(18px);
       background: linear-gradient(
           to bottom,
-          rgba(15, 23, 42, 0.95),
+          rgba(15, 23, 42, 0.96),
           rgba(15, 23, 42, 0.75),
           transparent
         ),
@@ -73,8 +79,8 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      padding-block: 10px;
+      gap: 12px;
+      padding-block: 8px;
     }
 
     .brand {
@@ -87,13 +93,7 @@
       width: 32px;
       height: 32px;
       border-radius: 50%;
-      background: conic-gradient(
-        from 120deg,
-        #f97316,
-        #facc15,
-        #16a34a,
-        #f97316
-      );
+      background: conic-gradient(from 120deg, #f97316, #facc15, #16a34a, #f97316);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -120,14 +120,14 @@
 
     .nav-links {
       display: none;
-      gap: 18px;
+      gap: 16px;
       font-size: 0.9rem;
       color: var(--text-muted);
     }
 
     .nav-links a {
       position: relative;
-      padding-bottom: 3px;
+      padding-bottom: 2px;
     }
 
     .nav-links a::after {
@@ -144,24 +144,21 @@
     .nav-links a:hover {
       color: var(--text-main);
     }
+
     .nav-links a:hover::after {
       width: 100%;
     }
 
-    .nav-phone {
-      font-size: 0.85rem;
-      padding: 6px 12px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(248, 250, 252, 0.25);
-      background: rgba(15, 23, 42, 0.9);
+    .nav-call {
       display: none;
     }
 
     .nav-toggle {
       border-radius: var(--radius-pill);
-      padding: 6px 12px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 6px 10px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
       background: rgba(15, 23, 42, 0.96);
+      color: var(--text-main);
       display: inline-flex;
       align-items: center;
       gap: 6px;
@@ -177,15 +174,15 @@
       display: none;
       flex-direction: column;
       gap: 6px;
-      padding: 10px 14px 14px;
+      padding: 8px 10px 10px;
       border-radius: var(--radius-md);
       border: 1px solid rgba(148, 163, 184, 0.4);
-      margin-bottom: 8px;
+      margin-bottom: 6px;
       background: radial-gradient(circle at top, #020617 0, #020617 60%);
     }
 
     .nav-mobile a {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: var(--text-muted);
       padding-block: 4px;
     }
@@ -201,34 +198,31 @@
       .nav-toggle {
         display: none;
       }
-      .nav-phone {
+      .nav-call {
         display: inline-flex;
+        font-size: 0.8rem;
+        padding: 6px 10px;
+        border-radius: var(--radius-pill);
+        border: 1px solid rgba(248, 250, 252, 0.25);
+        background: rgba(15, 23, 42, 0.9);
       }
-    }
-
-    main {
-      padding-top: 16px;
     }
 
     /* HERO */
 
     .hero {
+      margin-top: 8px;
       display: grid;
-      grid-template-columns: minmax(0, 1.4fr);
-      gap: 28px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 18px;
       align-items: center;
     }
 
     @media (min-width: 900px) {
       .hero {
-        grid-template-columns: minmax(0, 1.5fr) minmax(0, 1.1fr);
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+        gap: 26px;
       }
-    }
-
-    .hero-text {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
     }
 
     .tagline {
@@ -253,9 +247,10 @@
     }
 
     .hero-title {
-      font-size: clamp(2.1rem, 3.1vw + 1.3rem, 3rem);
+      font-size: clamp(2rem, 3.1vw + 1.2rem, 2.6rem);
       letter-spacing: -0.04em;
-      line-height: 1.05;
+      line-height: 1.1;
+      margin-top: 8px;
     }
 
     .hero-title span {
@@ -267,24 +262,30 @@
     .hero-subtitle {
       font-size: 0.98rem;
       color: var(--text-muted);
-      max-width: 32rem;
+      margin-top: 6px;
+    }
+
+    .hero-subtitle strong {
+      color: var(--accent-soft);
+      font-weight: 600;
     }
 
     .hero-cta {
+      margin-top: 14px;
       display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
+      flex-direction: column;
+      gap: 8px;
     }
 
     .btn {
       border-radius: var(--radius-pill);
-      padding: 10px 20px;
+      padding: 11px 18px;
       border: 1px solid transparent;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       cursor: pointer;
       display: inline-flex;
       align-items: center;
+      justify-content: center;
       gap: 8px;
       transition: 160ms ease-out;
       text-decoration: none;
@@ -310,13 +311,29 @@
       background: #020617;
     }
 
+    @media (min-width: 480px) {
+      .hero-cta {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+      .btn {
+        width: auto;
+      }
+    }
+
+    @media (max-width: 479px) {
+      .btn {
+        width: 100%;
+      }
+    }
+
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      font-size: 0.78rem;
+      gap: 10px;
+      font-size: 0.8rem;
       color: var(--text-muted);
-      margin-top: 6px;
+      margin-top: 8px;
     }
 
     .hero-meta span {
@@ -332,14 +349,13 @@
       background: var(--accent);
     }
 
-    /* FOOD SVG "DIAGRAM" */
-
     .hero-plate {
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-subtle);
       background: radial-gradient(circle at top, #111827 0, #020617 70%);
-      padding: 16px;
+      padding: 14px;
       box-shadow: var(--shadow-soft);
+      margin-top: 4px;
     }
 
     .hero-plate-header {
@@ -347,7 +363,7 @@
       justify-content: space-between;
       font-size: 0.8rem;
       color: var(--text-muted);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .hero-plate-title {
@@ -358,24 +374,24 @@
     .food-svg {
       width: 100%;
       max-width: 260px;
-      margin: 0 auto 6px;
+      margin: 0 auto 4px;
       display: block;
     }
 
     .hero-plate-caption {
       text-align: center;
-      font-size: 0.78rem;
+      font-size: 0.8rem;
       color: var(--text-muted);
     }
 
     /* SECTIONS */
 
     section {
-      margin-top: 40px;
+      margin-top: 26px;
     }
 
     .section-heading {
-      margin-bottom: 18px;
+      margin-bottom: 14px;
     }
 
     .section-label {
@@ -383,13 +399,13 @@
       letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--accent-soft);
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .section-title {
-      font-size: 1.4rem;
+      font-size: 1.35rem;
       letter-spacing: -0.03em;
-      margin-bottom: 4px;
+      margin-bottom: 3px;
     }
 
     .section-subtitle {
@@ -402,10 +418,10 @@
     .menu-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
-      gap: 16px;
+      gap: 14px;
     }
 
-    @media (min-width: 720px) {
+    @media (min-width: 820px) {
       .menu-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
       }
@@ -415,22 +431,22 @@
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-subtle);
       background: var(--card-bg);
-      padding: 14px 14px 12px;
+      padding: 12px 14px 10px;
       box-shadow: 0 14px 35px rgba(15, 23, 42, 0.9);
-      font-size: 0.9rem;
+      font-size: 0.92rem;
     }
 
     .menu-card h3 {
       font-size: 1rem;
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .menu-tag {
-      font-size: 0.7rem;
+      font-size: 0.74rem;
       text-transform: uppercase;
       letter-spacing: 0.16em;
       color: var(--text-muted);
-      margin-bottom: 6px;
+      margin-bottom: 4px;
     }
 
     .menu-item-row {
@@ -446,17 +462,17 @@
     }
 
     .menu-item-name {
-      font-size: 0.88rem;
+      font-size: 0.9rem;
     }
 
     .menu-item-note {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
     }
 
     .menu-item-price {
       font-weight: 600;
-      font-size: 0.88rem;
+      font-size: 0.9rem;
       white-space: nowrap;
     }
 
@@ -465,14 +481,14 @@
     .about-grid {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
-      gap: 16px;
-      font-size: 0.9rem;
+      gap: 14px;
+      font-size: 0.92rem;
       color: var(--text-muted);
     }
 
     @media (min-width: 880px) {
       .about-grid {
-        grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.1fr);
+        grid-template-columns: minmax(0, 1.35fr) minmax(0, 1.05fr);
       }
     }
 
@@ -480,15 +496,15 @@
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-subtle);
       background: var(--card-bg);
-      padding: 14px 16px;
+      padding: 12px 14px;
       box-shadow: 0 14px 35px rgba(15, 23, 42, 0.9);
     }
 
     .about-highlight {
       display: flex;
       flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 10px;
+      gap: 8px;
+      margin-top: 8px;
     }
 
     .about-pill {
@@ -502,13 +518,13 @@
 
     .contact-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr);
-      gap: 18px;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 14px;
     }
 
     @media (min-width: 860px) {
       .contact-grid {
-        grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.1fr);
+        grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.05fr);
       }
     }
 
@@ -516,22 +532,22 @@
       border-radius: var(--radius-lg);
       border: 1px solid var(--border-subtle);
       background: var(--card-bg);
-      padding: 14px 16px;
+      padding: 12px 14px;
       box-shadow: 0 14px 35px rgba(15, 23, 42, 0.9);
-      font-size: 0.88rem;
+      font-size: 0.9rem;
     }
 
     .contact-list {
       display: grid;
       gap: 8px;
-      margin-top: 10px;
+      margin-top: 8px;
     }
 
     .contact-row {
       display: flex;
       align-items: center;
       gap: 10px;
-      font-size: 0.86rem;
+      font-size: 0.88rem;
     }
 
     .contact-icon {
@@ -553,7 +569,7 @@
     form {
       display: grid;
       gap: 8px;
-      font-size: 0.85rem;
+      font-size: 0.86rem;
     }
 
     label {
@@ -585,15 +601,15 @@
     }
 
     .footnote {
-      font-size: 0.75rem;
+      font-size: 0.78rem;
       color: var(--text-muted);
       margin-top: 4px;
     }
 
     footer {
       border-top: 1px solid rgba(148, 163, 184, 0.25);
-      margin-top: 32px;
-      padding-top: 12px;
+      margin-top: 26px;
+      padding-top: 10px;
       font-size: 0.78rem;
       color: var(--text-muted);
     }
@@ -632,7 +648,7 @@
         </div>
 
         <div style="display:flex; align-items:center; gap:8px;">
-          <a class="nav-phone" href="tel:+447570731646">Call: 07570 731646</a>
+          <a class="nav-call" href="tel:+447570731646">Call: 07570731646</a>
           <button class="nav-toggle" id="navToggle">
             <span>☰</span> Menu
           </button>
@@ -650,7 +666,7 @@
   <main class="page">
     <!-- HERO -->
     <section id="home" class="hero">
-      <div class="hero-text">
+      <div>
         <div class="tagline">
           <span class="tag-dot"></span>
           Fresh Nepali taste in the UK
@@ -660,29 +676,31 @@
         </h1>
         <p class="hero-subtitle">
           Hot, juicy momo made with love by
-          <strong>Prabin Mahato</strong>. Veg and non-veg momo, jhol, sadheko aalu,
-          fried rice and biryani — proper Nepali flavour, right here in the UK.
+          <strong>Prabin Mahato</strong>. Veg and non-veg momo, jhol momo, sadheko
+          aalu, fried rice and biryani — proper Nepali flavour, right here in the UK.
         </p>
+
         <div class="hero-cta">
           <a href="tel:+447570731646" class="btn btn-primary">
-            Call to order • 07570 731646
+            📞 Call / WhatsApp • 07570731646
           </a>
           <a href="#menu" class="btn btn-ghost">
-            View full menu
+            🥟 View full menu
           </a>
         </div>
+
         <div class="hero-meta">
-          <span><span class="hero-meta-dot"></span>Freshly prepared</span>
+          <span><span class="hero-meta-dot"></span> Freshly prepared</span>
           <span>Veg & non-veg options</span>
-          <span>Authentic Nepali street food feel</span>
+          <span>Perfect for friends & family</span>
         </div>
       </div>
 
-      <!-- Simple momo "diagram" using SVG -->
+      <!-- SVG "diagram" -->
       <aside class="hero-plate" aria-label="Illustration of momo plate">
         <div class="hero-plate-header">
           <div class="hero-plate-title">Momo Platter (illustration)</div>
-          <div style="font-size:0.75rem;">Veg & Non-Veg</div>
+          <div style="font-size:0.78rem;">Veg & Non-Veg</div>
         </div>
         <svg class="food-svg" viewBox="0 0 200 140">
           <!-- plate -->
@@ -712,7 +730,7 @@
     <section id="menu">
       <div class="section-heading">
         <div class="section-label">Menu</div>
-        <h2 class="section-title">Our Specialities</h2>
+        <h2 class="section-title">Our specialities</h2>
         <p class="section-subtitle">
           All items are freshly prepared. Prices are per plate and shown in brackets in GBP.
         </p>
@@ -721,7 +739,7 @@
       <div class="menu-grid">
         <article class="menu-card">
           <div class="menu-tag">Momo</div>
-          <h3>Momo Favourites</h3>
+          <h3>Momo favourites</h3>
 
           <div class="menu-item-row">
             <div>
@@ -773,8 +791,8 @@
         </article>
 
         <article class="menu-card">
-          <div class="menu-tag">Snacks & Sides</div>
-          <h3>More Nepali Favourites</h3>
+          <div class="menu-tag">Snacks & sides</div>
+          <h3>More Nepali favourites</h3>
 
           <div class="menu-item-row">
             <div>
@@ -786,8 +804,8 @@
         </article>
 
         <article class="menu-card">
-          <div class="menu-tag">Fried Rice</div>
-          <h3>Fried Rice (Veg & Non-Veg)</h3>
+          <div class="menu-tag">Fried rice</div>
+          <h3>Fried rice (veg & non-veg)</h3>
 
           <div class="menu-item-row">
             <div>
@@ -808,7 +826,7 @@
 
         <article class="menu-card">
           <div class="menu-tag">Biryani</div>
-          <h3>Biryani (Veg & Non-Veg)</h3>
+          <h3>Biryani (veg & non-veg)</h3>
 
           <div class="menu-item-row">
             <div>
@@ -839,36 +857,44 @@
       <div class="about-grid">
         <div>
           <p>
-            <strong>Nepali Dai ko Momo</strong> is run by
-            <strong>Prabin Mahato</strong>, bringing the real taste of Nepali
-            street momo to the UK. Every plate is made fresh with homemade
-            spices, inspired by the flavours we grew up with back home.
+            <strong>Nepali Dai ko Momo</strong> is a small, home-style momo kitchen
+            run by <strong>Prabin Mahato</strong>, proudly bringing the real taste of
+            Nepal to the UK. Every momo is made with fresh ingredients, homemade
+            spices, and the same traditional recipes we grew up eating back home.
           </p>
-          <p style="margin-top:8px;">
-            Whether you are craving classic steamed momo, jhol momo in warm
-            gravy, or a full meal with fried rice and biryani, we’ve got you covered.
+          <p style="margin-top:6px;">
+            We prepare both veg and non-veg momo with equal love — from classic
+            steamed momo to jhol momo dipped in rich, flavourful gravy. Our menu
+            also includes Nepali-style fried rice, biryani, and popular snacks like
+            sadheko aalu.
+          </p>
+          <p style="margin-top:6px;">
+            Whether you are missing the flavours of home or trying Nepali food for
+            the first time, we promise warm hospitality, delicious food, and an
+            experience that feels like you’re sitting in a momo shop in Kathmandu.
           </p>
 
           <div class="about-highlight">
             <div class="about-pill">Authentic Nepali flavours</div>
             <div class="about-pill">Veg & non-veg options</div>
-            <div class="about-pill">Perfect for friends & family</div>
+            <div class="about-pill">Perfect for small gatherings</div>
           </div>
         </div>
 
         <div class="about-card">
           <strong style="font-size:0.96rem;">How to order</strong>
           <p style="margin-top:6px;">
-            For now, ordering is simple — just give us a call or send a message on
-            WhatsApp, Instagram, Facebook or email.
+            Ordering is simple — just call or send a message on WhatsApp, Instagram,
+            Facebook or email. We’ll confirm your order and time with you.
           </p>
           <ul style="margin-top:8px; padding-left:18px;">
-            <li>Check the menu and decide your items</li>
-            <li>Call or message with your order and quantity</li>
-            <li>We confirm the time and details with you</li>
+            <li>Check the menu and choose your items</li>
+            <li>Share quantity and preferred time</li>
+            <li>We prepare everything fresh for you</li>
           </ul>
           <p style="margin-top:8px;">
-            We aim to serve hot, tasty food that feels like home. 🧡
+            We focus on freshness, cleanliness and friendly service so every plate
+            feels like home. 🧡
           </p>
         </div>
       </div>
@@ -878,7 +904,7 @@
     <section id="contact">
       <div class="section-heading">
         <div class="section-label">Contact</div>
-        <h2 class="section-title">Order & Contact Details</h2>
+        <h2 class="section-title">Order & contact details</h2>
         <p class="section-subtitle">
           Call, message or email us for orders, catering or any questions.
         </p>
@@ -892,7 +918,7 @@
               <div class="contact-icon">📞</div>
               <div>
                 Phone / WhatsApp: <br />
-                <a class="contact-link" href="tel:+447570731646">07570 731646</a>
+                <a class="contact-link" href="tel:+447570731646">07570731646</a>
               </div>
             </div>
 
@@ -927,13 +953,13 @@
                 Facebook: <br />
                 <a
                   class="contact-link"
-                  href="https://www.facebook.com/profile.php?id=100094"
+                  href="https://www.facebook.com/"
                   target="_blank"
                   rel="noreferrer"
                 >
                   Pra Bin Mahato
                 </a>
-                <!-- If this link is not correct, you can change it later -->
+                <!-- You can replace this link with your real profile URL -->
               </div>
             </div>
           </div>
@@ -946,17 +972,17 @@
           </p>
           <form>
             <div>
-              <label for="name">Name</label>
-              <input id="name" type="text" placeholder="Your name" />
+              <label for="cname">Name</label>
+              <input id="cname" type="text" placeholder="Your name" />
             </div>
             <div>
-              <label for="phone">Phone</label>
-              <input id="phone" type="tel" placeholder="Your phone" />
+              <label for="cphone">Phone</label>
+              <input id="cphone" type="tel" placeholder="Your phone" />
             </div>
             <div>
-              <label for="message">Message</label>
+              <label for="cmessage">Message</label>
               <textarea
-                id="message"
+                id="cmessage"
                 placeholder="Write your order or question here..."
               ></textarea>
             </div>
@@ -977,9 +1003,7 @@
       <div>
         © <span id="year"></span> Nepali Dai ko Momo · Site owner: Prabin Mahato
       </div>
-      <div>
-        Designed for a small momo business in the UK.
-      </div>
+      <div>Designed for a small Nepali momo business in the UK.</div>
     </div>
   </footer>
 
@@ -989,10 +1013,8 @@
     const navMobile = document.getElementById("navMobile");
     if (navToggle && navMobile) {
       navToggle.addEventListener("click", () => {
-        navMobile.style.display =
-          navMobile.style.display === "flex" ? "none" : "flex";
+        navMobile.style.display = navMobile.style.display === "flex" ? "none" : "flex";
       });
-
       navMobile.querySelectorAll("a").forEach((link) => {
         link.addEventListener("click", () => {
           if (window.innerWidth < 768) navMobile.style.display = "none";
@@ -1001,8 +1023,7 @@
     }
 
     // year in footer
-    document.getElementById("year").textContent =
-      new Date().getFullYear();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
